@@ -1,0 +1,49 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Analysis {
+  id                 String   @id @default(cuid())
+  userId             String   // Clerk User ID
+  defenseStage       String   @default("defesa_previa")
+  date               String
+  time               String
+  location           String
+  authority          String
+  infractionType     String
+  legalFraming       String
+  vehiclePlate       String
+  vehicleModel       String
+  measuredSpeed      String?
+  consideredSpeed    String?
+  roadLimit          String?
+  severity           String?
+  points             Int?
+  hasPhoto           Boolean
+  successProbability Int
+  explanation        String
+  appealText         String   @db.Text
+  createdAt          DateTime @default(now())
+
+  // Radar info (optional)
+  radarModel         String?
+  radarCalibration   String?
+  radarHomologation  String?
+
+  @@index([userId])
+}
+
+model UserStats {
+  id                String   @id @default(cuid())
+  userId            String   @unique
+  totalAnalyses      Int      @default(0)
+  avgProbability    Float    @default(0)
+  potentialSavings   Float    @default(0)
+  pointsSaved       Int      @default(0)
+  lastAnalysisDate   DateTime @updatedAt
+}

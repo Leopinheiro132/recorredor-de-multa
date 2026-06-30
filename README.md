@@ -4,6 +4,14 @@ MultaAI é um sistema web desenvolvido em Next.js para auxiliar motoristas a ide
 
 Este projeto foi reestruturado como um MVP (Mínimo Produto Viável) focado em usabilidade e simplicidade, integrando inteligência artificial (Google Gemini) e controle de acessos (Clerk).
 
+## 🌐 Protótipo Executável
+O protótipo do sistema está publicado e pode ser testado online em:
+👉 **[https://multaai.vercel.app/](https://multaai.vercel.app/)**
+
+## 📄 Arquivo de Teste
+Para facilitar a homologação e testes do sistema, disponibilizamos um arquivo de exemplo na raiz do projeto:
+- [arquivo de teste.pdf](./arquivo%20de%20teste.pdf) (utilize este PDF para testar o upload e a análise por IA).
+
 ---
 
 ## 🛠️ Tecnologias Utilizadas
@@ -55,7 +63,6 @@ Este projeto foi reestruturado como um MVP (Mínimo Produto Viável) focado em u
 - `lib/`: Utilitários compartilhados (Prisma, docx, limitador de taxa).
 - `prisma/`: Modelagem do banco de dados relacional.
 - `proxy.ts`: Middleware de controle de rotas públicas e autenticação.
-- `DOCUMENTO_REQUISITOS.md`: Documento conceitual de requisitos contendo a matriz GUT e diagramas UML do projeto.
 
 ---
 
